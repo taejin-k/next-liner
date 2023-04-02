@@ -11,7 +11,7 @@ interface Props {
   setIsScroll: Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Main = memo((props: Props) => {
+const Main = (props: Props) => {
   const { setIsScroll } = props;
   const keyword = useAppSelector((state: RootState) => state.keyword);
   const getDocuments = useGetDocumentsQuery(keyword);
@@ -65,7 +65,7 @@ const Main = memo((props: Props) => {
         [...Array(20)].map((_arry, index) => <CardSkeleton key={index} />)}
     </MainStyled>
   );
-});
+};
 
 export default Main;
 
